@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>💗 Pastel Sürpriz</title>
+  <link rel="stylesheet" href="style_updated.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="flower-bg" aria-hidden="true"></div>
+
+  <!-- Sürekli uçan kalpler -->
+  <div class="float-hearts" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Sürekli uçan çiçekler -->
+  <div class="float-flowers" aria-hidden="true">
+    <span>🌸</span><span>🌷</span><span>🌼</span><span>💐</span>
+    <span>🌸</span><span>🌷</span><span>🌼</span><span>💐</span>
+  </div>
+
+  <!-- ====== 1) KİLİT EKRANI ====== -->
+  <main class="wrap" id="lockView">
+    <section class="sheet">
+      <div class="pill">🔒 Sadece size özel</div>
+      <h1>Bu sayfa sadece <span class="hl">senin</span> için.</h1>
+      <p class="sub">Devam etmek için şifreyi gir.</p>
+
+      <form class="lock" id="lockForm">
+        <input id="pw" type="password" autocomplete="off" placeholder="Şifre" required />
+        <button type="submit" class="btn">Aç</button>
+      </form>
+
+      <p class="hint" id="hint">İpucu: İlk buluştuğumuz günün adı (küçük harflerle)</p>
+    </section>
+  </main>
+
+  <!-- ====== 2) KUTLAMA (ŞİFREDEN SONRA İLK AÇILAN) ====== -->
+  <main class="wrap hidden" id="introView">
+    <section class="sheet big partySheet">
+      <!-- ÜST / ALT DOĞUM GÜNÜ SÜSLERİ -->
+      <div class="partyDecor top" aria-hidden="true">
+        <span>🎈</span><span>🎉</span><span>🧁</span><span>🎂</span><span>🎊</span><span>🕯️</span><span>🎈</span><span>🎉</span>
+      </div>
+      <div class="partyDecor bottom" aria-hidden="true">
+        <span>🎊</span><span>🍰</span><span>🧁</span><span>🎉</span><span>🎂</span><span>🎈</span><span>🕯️</span><span>🎊</span>
+      </div>
+
+      <header class="partyHero">
+        <div class="partyBadge">🎂</div>
+        <div class="partyText">
+          <h2 class="partyTitle">İYİ Kİ DOĞDUN CANIM SEVGİLİM ESMOŞUM</h2>
+          <div class="heart-line" aria-hidden="true">💗 💗 💗</div>
+          <p class="partySub">Nice sağlıklı, huzurlu, mutlu beraber yıllara güzel sevgilim. Hayatında yeni bir bölüm başlıyor.Daha çıtırsın
+            ,gençsin. İnşallah her şey gönlünce olur. Seni çok seviyorum  💗
+
+          </p>
+          <p class="partyMini">23.SEZON</p>
+        </div>
+      </header>
+
+      <div class="partyActions">
+        <button id="goMemories" class="btn primary" type="button">Biraz Geçmiş 💗</button>
+        <button id="partyHearts" class="btn soft" type="button">Kalp Patlat 💞</button>
+        <button id="lockBtn" class="btn ghost" type="button">Kilitle</button>
+      </div>
+
+      <div class="partyHints" aria-hidden="true">
+        <span>💭 Anılara gidelim</span>
+        <span>💥 Kalp patlatalım</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== 3) GEÇMİŞ (SADECE KARTLAR) ====== -->
+  <main class="wrap hidden" id="memoriesView">
+    <section class="sheet big">
+      <header class="memHeader">
+        <div>
+          <h2 class="memTitle">🎀 Geçmişimiz</h2>
+        </div>
+        <button id="backToIntro" class="btn ghost" type="button">← Geri</button>
+      </header>
+
+      <section class="cards">
+        <div class="grid grid-3">
+          <article class="card" data-open="firstSight">
+            <div class="icon">🌷</div>
+            <div class="ct">
+              <div class="t">Seni ilk gördüğümde</div>
+              <div class="s">O ilk his…</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="firstDate">
+            <div class="icon">☕️</div>
+            <div class="ct">
+              <div class="t">İlk buluşmamız</div>
+              <div class="s">Kalbimin sesi…</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card card-bday" data-open="firstBdayTogether">
+            <div class="icon">🎂</div>
+            <div class="ct">
+              <div class="t">İlk doğum günü kutladığımız</div>
+              <div class="s">Bir doğum gününden fazlası..</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="loversNight">
+            <div class="icon">🌙</div>
+            <div class="ct">
+              <div class="t">Sevgili olduğumuz gece</div>
+              <div class="s">İsim koyduğumuz an</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="firstKiss">
+            <div class="icon">💋</div>
+            <div class="ct">
+              <div class="t">İlk öpüşmemiz</div>
+              <div class="s">Zamanın durduğu an</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="daysTogether">
+            <div class="icon">🗓️</div>
+            <div class="ct">
+              <div class="t">Kaç gündür tanışıyoruz?</div>
+              <div class="s">Özel sayı</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="loveAmount">
+            <div class="icon">🌌</div>
+            <div class="ct">
+              <div class="t">Seni ne kadar seviyorum?</div>
+              <div class="s"></div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="cities">
+            <div class="icon">🗺️</div>
+            <div class="ct">
+              <div class="t">Gittiğimiz şehirler</div>
+              <div class="s">Haritada pembe</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="futureDream">
+            <div class="icon">💍</div>
+            <div class="ct">
+              <div class="t">Gelecekteki hayalim</div>
+              <div class="s">Biz…</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="secret">
+            <div class="icon">🔐</div>
+            <div class="ct">
+              <div class="t">Gizli mesaj</div>
+              <div class="s">Sadece sana…</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="eskisehirTrip">
+            <div class="icon">🚋</div>
+            <div class="ct">
+              <div class="t">Eskişehir gezimiz</div>
+              <div class="s">Sıcacık anılar</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="ankaraTrip">
+            <div class="icon">🏙️</div>
+            <div class="ct">
+              <div class="t">Ankara gezimiz</div>
+              <div class="s">Bizim şehrimiz</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+
+          <article class="card" data-open="specialDays">
+            <div class="icon">🎀</div>
+            <div class="ct">
+              <div class="t">Özel günlerimiz</div>
+              <div class="s">Küçük büyük</div>
+            </div>
+            <div class="chev">›</div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <button id="miniBurst" class="btn soft" type="button">Kalp Patlat 💞</button>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ====== OVERLAY ====== -->
+  <section class="overlay hidden" id="overlay" aria-hidden="true">
+    <div class="panel" role="dialog" aria-modal="true">
+      <button class="close" id="closeOverlay" type="button" aria-label="Kapat">✕</button>
+
+      <div class="screen hidden" id="screen-firstSight">
+        <div class="screenHead">
+          <div class="badge">🌷</div>
+          <h3>Seni ilk gördüğümde</h3>
+        </div>
+        <p class="p">Kalbim yerinden fırlayacak gibi atıyordu çok heycanlandım. Çok mutlu oldum.Seni karşımda canlı kanlı görmek tarifsiz bir histi.🥰</p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-firstDate">
+        <div class="screenHead">
+          <div class="badge">☕️</div>
+          <h3>İlk buluşmamız</h3>
+        </div>
+        <p class="p">Çok heycanlıydım ama çokta mutluydum. Cadı'nın Evindeki ilk buluşmamız, ilk kez vapura birlikte binmemiz. Bostanlı sahilinde beraber kahve içmemiz,
+          hepsi çok özel anlardı. Ve gecenin sonunda ayrılırken sana ufak bir sarılmamı ve dönüşte çekildiğimiz fotoğraflara bakarken durağı kaçırıp Menemen'e kadar gitmemi asla unutamayacağım.💕
+        </p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-firstBdayTogether">
+        <div class="screenHead">
+          <div class="badge">🎂</div>
+          <h3>İlk doğum günü kutladığımızda</h3>
+        </div>
+        <p class="p">Ege'nin şirin kasabası Foça'da kutladığımız birlikte ilk doğum günün çok özeldi.İlk kez birlikte kaldık ve doyasıya rahatça vakit geçirdik.
+          Pastan için çakmak almayı unutup gecenin bir yarısı seni tek başına bırakıp çakmak aramaya gitmek içime sinmemişti. Ama çok güzel ve özel vir geceydi.Sıcaklığını iliklerime kadar hissetmiştim gülüşü güzel kız.💘 </p>
+        <div class="row">
+          <button class="btn primary" id="confettiBtn" type="button">Konfeti Patlat 🎉</button>
+          <button class="btn soft" data-burst type="button">Kalp patlat 💞</button>
+        </div>
+      </div>
+
+      <div class="screen hidden" id="screen-loversNight">
+        <div class="screenHead">
+          <div class="badge">🌙</div>
+          <h3>Sevgili olduğumuz gece</h3>
+        </div>
+        <p class="p"> Evet,yine Ege'nin şirin kasabası Foça'da doğum gününde hayatımın en özel olayı gerçekleşti. Sana sevgililik teklfini özellikle bu gecede teklif etmek istedim.
+          kabul edince resmen dünyalar benim oldu. Hayatımın önemli bir dönüm noktasıydı.İyi benim sevgilimsin.❤️💕
+        </p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-firstKiss">
+        <div class="screenHead">
+          <div class="badge">💋</div>
+          <h3>İlk öpüşmemiz</h3>
+        </div>
+        <p class="p">Üçkuyular sahilinde aniden gelişen bu olay çok tatlı bir histi. Çok zevk almıştım ama sonra bir o kadarda utanmıştım. Hayatım boyunca o zarif,tatlı dudaklarından öpmek istiyorum.</p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-daysTogether">
+        <div class="screenHead">
+          <div class="badge">🗓️</div>
+          <h3>Kaç gündür tanışıyoruz?</h3>
+        </div>
+        <div class="counterBox">
+          <div class="counterNum" id="daysNum">Tam 803 gündür tanışıyoruz</div>
+          <div class="counterLbl">gün geçti</div>
+        </div>
+        <p class="p muted">Her gün seni biraz daha sevdim.</p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-loveAmount">
+        <div class="screenHead">
+          <div class="badge">🌌</div>
+          <h3>Seni ne kadar seviyorum?</h3>
+        </div>
+        <p class="p bigText">
+          <span class="hl2">Alacağım nefes kadar </span> ✨<br/>
+          Seni bütün ömrüm boyunca seveceğim. <br/>
+          .
+        </p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-cities">
+        <div class="screenHead">
+          <div class="badge">🗺️</div>
+          <h3>Gittiğimiz şehirler</h3>
+        </div>
+
+        <div class="mapWrap">
+          <div class="mapImg">
+            <img src="turkiye.png" alt="Türkiye Haritası">
+
+            <!-- PEMBE BOYA LEKELERİ -->
+            <span class="paint izmir"></span>
+            <span class="paint eskisehir"></span>
+            <span class="paint ankara"></span>
+            <span class="paint adana"></span>
+
+            <!-- Yazılar (istersen kaldırabilirsin) -->
+            <span class="city-dot izmir">İzmir</span>
+            <span class="city-dot eskisehir">Eskişehir</span>
+            <span class="city-dot ankara">Ankara</span>
+            <span class="city-dot adana">Adana</span>
+          </div>
+        </div>
+
+        <p class="p muted">Bu şehirlerin hepsi pembe çünkü anılarımız pembe 💗</p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-futureDream">
+        <div class="screenHead">
+          <div class="badge">💍</div>
+          <h3>Seninle gelecekteki hayalim</h3>
+        </div>
+        <p class="p">Evlenmek.Birlikte mutlu ,huzurlu bir aile kurmak. Dünyayı gezmek,anılar biriktirmek. 
+          Beraber yemek yapıp afiyetle yemek. Film geceleri yapmak. Beraber romantik anlar yaşamak. Birlikte dans etmek,saçını ve seni kurutmak. Bebeklerimizle birlikte ilgilenmek.  </p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-secret">
+        <div class="screenHead">
+          <div class="badge">🔐</div>
+          <h3>Gizli mesaj</h3>
+        </div>
+        <p class="p">Sen benim en güzel tesadüfümsün. İyi ki senin gibi bir sevgilim var. Gülüşü güzel kız hep gül inşallah.Arkanda kocan her zaman var. Seni çooook seviyorum ❤️ <span class="hl2">hep sen.</span></p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-eskisehirTrip">
+        <div class="screenHead">
+          <div class="badge">🚋</div>
+          <h3>Eskişehir gezimiz</h3>
+        </div>
+        <p class="p">Seninle ilk şehir dışı gezimizdi.Gün boyu Eskişehir'in her yerini gezdik.Çok güzel anılar biriktirdik. Prensesimi Masal şatosuna götürdük.
+          Trenle ilk kez uzun bir yolculuk yaptık. En güzel kısmı dizimde uyuyakaldığın andı.Eskişehir seninle birlikte özel bir şehir oldu.
+        </p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-ankaraTrip">
+        <div class="screenHead">
+          <div class="badge">🏙️</div>
+          <h3>Ankara gezimiz</h3>
+        </div>
+        <p class="p">Eskişehir'den sonraki rotamız hızlı trenle başkent Ankara'ydı.Vardığımızda o kadar yoruldukki uyuyakalmışız.Sabah Anıtkabire gittik ama gidiş yolu meşakkatliydi.
+          Ankara'nın sert dolusuna yaklanmıştık.Bir ağacın altına saklanıp bana sımsıkı sarılmıştın. Çok tatlıydın,unutamayacağım bir gündü.Daha sonra Anıtlkabir'e ulaşabilmiştik. Tabi Ankara'ya gitmişken Aspava'da da yedik.
+          Atakule,Kuğulupark,Meclisler,Kızılay hepsi çok güzeldi.Seninle olduğun her yer çok güzel oluyor zaten.❤️
+        </p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+      <div class="screen hidden" id="screen-specialDays">
+        <div class="screenHead">
+          <div class="badge">🎀</div>
+          <h3>Özel günlerimiz</h3>
+        </div>
+        <p class="p">15 Ekim 2023: İlk Tanışma <br/>
+      
+          8 Kasım 2023: İlk Buluşma <br/>
+          26 Aralık 2023: Sevgili olmamız
+          
+        </p>
+        <button class="btn primary" data-burst type="button">Kalp patlat 💞</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Efekt canvas -->
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <script src="script_updated.js"></script>
+</body>
+</html>
