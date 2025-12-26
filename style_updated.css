@@ -622,3 +622,12 @@ input{
   .grid, .grid-3{ grid-template-columns: 1fr; }
   .partyHero{ align-items:flex-start; }
 }
+
+.btn{
+  /* ... mevcutların altına ekle ... */
+  color: var(--ink);
+  -webkit-text-fill-color: var(--ink); /* iPhone Safari fix */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
